@@ -56,7 +56,8 @@ class Song
   end
 
   def self.create_from_filename(filename)
-    new_from_filename(filename).tap{|i| i.save}
+    new_song = new_from_filename(filename)
+    new_song.save
   end
 
 end
