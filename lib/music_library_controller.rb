@@ -35,23 +35,29 @@ class MusicLibraryController
   end
 
   def list_songs #prints all songs (w/ artist and genre) in the library in a numbered list alphabetized by song name
-    Song.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |s,i|
+    Song.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |s, i|
       puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
     end
   end
 
   def list_artists #print all artists in library in a numbered list alphabetized by artist name
-    Artist.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |a,i|
+    Artist.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |a, i|
       puts "#{i}. #{a.name}"
   end
 
   def list_genres #print all genres in library in a numbered list alphabetized by genre name
-    Genre.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |g,i|
+    Genre.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |g, i|
       puts "#{i}. #{g.name}"
   end
 
   def list_songs_by_artist #takes user input for artist and returns that artists songs in an numbered list alphabetized by name
-
+    puts "Enter the name of an artist."
+    input = gets.strip
+    if artist = Artist.find_by_name(input)
+      artist.songs.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |s, i|
+        puts "#{i}. #{s.name} - #{s.genre.name}"
+      end
+    end
   end
 
   def list_songs_by_genre #takes user input for genre and returns that genres songs in an numbered list alphabetized by name
