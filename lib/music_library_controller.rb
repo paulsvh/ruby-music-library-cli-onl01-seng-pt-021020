@@ -34,15 +34,15 @@ class MusicLibraryController
     end
   end
 
-  def list_songs #prints all songs in the library in a numbered list alphabetized by song name
+  def list_songs #prints all songs (w/ artist and genre) in the library in a numbered list alphabetized by song name
     Song.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |s,i|
       puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
     end
   end
 
   def list_artists #print all artists in library in a numbered list alphabetized by artist name
-    Artist.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |s,i|
-      puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
+    Artist.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do |a,i|
+      puts "#{i}. #{a.name}"
   end
 
   def list_genres #print all genres in library in a numbered list alphabetized by genre name
