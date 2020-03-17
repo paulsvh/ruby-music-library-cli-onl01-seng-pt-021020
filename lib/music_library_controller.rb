@@ -54,5 +54,8 @@ class MusicLibraryController
 
   end
 
+  def play_song #takes user input of a song number from #list_songs and puts "Playing #{song} by #{artist}".
+
+  end
 
 end
