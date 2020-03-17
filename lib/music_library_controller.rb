@@ -34,23 +34,23 @@ class MusicLibraryController
     end
   end
 
-  def list_songs
+  def list_songs #prints all songs in the library in a numbered list alphabetized by song name
 
   end
 
-  def list_artists
+  def list_artists #print all artists in library in a numbered list alphabetized by artist name
 
   end
 
-  def list_genres
+  def list_genres #print all genres in library in a numbered list alphabetized by genre name
 
   end
 
-  def list_songs_by_artist
+  def list_songs_by_artist #takes user input for artist and returns that artists songs in an numbered list alphabetized by name
 
   end
 
-  def list_songs_by_genre
+  def list_songs_by_genre #takes user input for genre and returns that genres songs in an numbered list alphabetized by name
 
   end
 
